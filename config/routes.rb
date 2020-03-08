@@ -5,11 +5,9 @@ Rails.application.routes.draw do
   
     namespace :api do
     get "/products" => "products#index"
-
     get "/products/:id" => "products#show"
-
-    post "/products" => "prodcuts#create"
-
+    post "/products" => "products#create"
     patch "/products/:id" => "products#show"
+    delete "/products/:id" => "products#destroy"
    end 
   end
