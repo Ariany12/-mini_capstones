@@ -14,7 +14,8 @@ class Api::ProductsController < ApplicationController
       @products = Product.new(
         name: params[:input_name],
         price: params[:input_price],
-        image: params[:input_image]
+        image_url: params[:input_image],
+        description: params[:input_description]
     )
       @products.save
       render 'show.json.jb'
@@ -22,18 +23,18 @@ class Api::ProductsController < ApplicationController
 
     def update
       id = params[:id]
-      @products = Product.find_by(id: id),
-      @products.update(
-      @products.name =  params[:input_name] || @products.name,
-      @products.price = params[:input_price] || @products.price,
-      @products.image = params[:input_image] || @products.image
-      )
-      render 'update.json.jb'
+      @products = Product.find_by(id: id)
+      @products.name =  params[:input_name] || @products.name
+      @products.price = params[:input_price] || @products.price
+      @products.image_url = params[:input_image_url] || @products.image_url
+      @products.save
+      render 'show.json.jb'
     end
 
     def destroy
-      @products = Product.find_by(id: params[:id],
+      @products = Product.find_by(id: params[:id])
       @products.destroy
       render json: {message: "Product has been removed"}
+    end
 
 end
