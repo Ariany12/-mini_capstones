@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     namespace :api do
     get "/products" => "products#index"
     get "/products/:id" => "products#show"
-    post "/products" => "products#create"
-    patch "/products/:id" => "products#update"
+    post "/products" => "products#create" # i dont need a create json is the same the show
+    patch "/products/:id" => "products#update" 
     delete "/products/:id" => "products#destroy"
    end 
   end
