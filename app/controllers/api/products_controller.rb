@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
       if params[:sort] && params[:sort_order] 
           @products = Product.order(params[:sort] => params[:sort_order])
       else
-         @products = Product.all
+         @products = Product.order(:id)
       end
      render 'index.json.jb'
     end
