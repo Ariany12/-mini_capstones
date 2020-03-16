@@ -1,8 +1,8 @@
 class Api::ProductsController < ApplicationController
     def index
-
+      @products = Product.all
       if params[:search]
-        @products = Product.where("name LIKE ?", "%#{params[:search]}")
+        @products = Product.where("name LIKE ?", "%#{params[:search]}%")
       else
         @products = Product.all
       end
@@ -33,12 +33,15 @@ class Api::ProductsController < ApplicationController
 
     def update
       id = params[:id]
-      @products = Product.find_by(id: id)
+      @products = Product.find(id: id)
       @products.name =  params[:name] || @products.name
       @products.price = params[:price] || @products.price
       @products.image_url = params[:image_url] || @products.image_url
-      @products.save
-      render 'show.json.jb'
+      if @products.save
+        render 'show.json.jb'
+      else
+        render json: {errors: @products.errors.full_messages}, status: :unprocessable_entity
+      end
     end
 
     def destroy
