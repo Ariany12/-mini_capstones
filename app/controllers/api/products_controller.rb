@@ -36,7 +36,7 @@ class Api::ProductsController < ApplicationController
 
     def update
       id = params[:id]
-      @products = Product.find(id: id)
+      @products = Product.find_by(id: id)
       @products.name =  params[:name] || @products.name
       @products.price = params[:price] || @products.price
       @products.image_url = params[:image_url] || @products.image_url

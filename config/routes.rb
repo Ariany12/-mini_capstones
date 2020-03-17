@@ -9,5 +9,17 @@ Rails.application.routes.draw do
     post "/products" => "products#create" # i dont need a create json is the same the show
     patch "/products/:id" => "products#update" 
     delete "/products/:id" => "products#destroy"
-   end 
-  end
+    patch "/suppliers/:id" => "products#update" 
+   
+  #   get "/suppliers" => "suppliers#index"
+  #   get "/suppliers/:id" => "suppliers#show"
+  #   post "/suppliers" => "suppliers#create" # i dont need a create json is the same the show
+  #   patch "/suppliers/:id" => "suppliers#update"
+  #   delete "/suppliers/:id" => "suppliers#destroy"
+
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
+
+   end
+end
