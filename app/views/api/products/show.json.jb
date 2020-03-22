@@ -7,3 +7,5 @@
 # }
 
 render partial: "product.json.jb", locals: {product: @products}
+
+
