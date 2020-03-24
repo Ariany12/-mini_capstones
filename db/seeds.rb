@@ -1,19 +1,19 @@
 
-products = Product.new({name: "calculater", price: 25, image_url: "none", description: "zero"})
-products.save
+# products = Product.new({name: "calculater", price: 25, image_url: "none", description: "zero"})
+# products.save
 
 # 10.times do
 # Product.create!(name: Faker::Food.fruits, price: Faker::Number.within(range: 1..10000), image_url: "none", description: "the best products you can have")
 # end
 
 
-products = Product.where(supplier_id: nil)
+# products = Product.where(supplier_id: nil)
 
-products.each do |product|
-  supplier_id = Supplier.all.sample.id
-  product.supplier_id = supplier_id
-  product.save
-end
+# products.each do |product|
+#   supplier_id = Supplier.all.sample.id
+#   product.supplier_id = supplier_id
+#   product.save
+# end
   # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -21,3 +21,7 @@ end
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+CartedProduct.create!(status: "carted", user_id: 9, product_id: 37, quantity: 2,)
+CartedProduct.create!(status: "carted", user_id: 9, product_id: 39, quantity: 2,)
+CartedProduct.create!(status: "carted", user_id: 10, product_id: 47, quantity: 5,)
