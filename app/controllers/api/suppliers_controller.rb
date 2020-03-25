@@ -1,4 +1,5 @@
-# class Aapi::SuppliersController < ApplicationController
+class Api::SuppliersController < ApplicationController
+  # class Aapi::SuppliersController < ApplicationController
 #   def index
 #     @suppliers = Supplier.all
 
@@ -22,3 +23,5 @@
 #     render 'show.json.jb'
 #   end
 # end
+
+end
