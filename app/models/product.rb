@@ -26,7 +26,7 @@ class Product < ApplicationRecord
     price * tax_rate
   end
 
-  def full_price
+  def total
     price + tax
   end
 end

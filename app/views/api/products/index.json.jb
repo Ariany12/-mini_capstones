@@ -7,7 +7,7 @@
 #     description: product.description,
 #     is_discounted: product.is_discounted?,
 #     tax: product.tax,
-#     full_price: product.full_price
+#     total: product.total 
 #   }
 # end
 
