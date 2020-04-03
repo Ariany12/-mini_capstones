@@ -1,33 +1,28 @@
 class Api::OrdersController < ApplicationController
-    # def index
-    #   if current_user
-    #     @orders = Order.all
-    #     #@orders = current_user.orders
-    #   else
-    #     @orders = []
-    #   end
-    #   render 'index.json.jb'
-    # end
+    def index
+      if current_user
+      @orders = current_user.orders
+      else
+       @orders = []
+      end
+      render 'index.json.jb'
+    end
 
-  def index 
-    @orders = current_user.orders
-    render 'index.json.jb'
-  end
+ 
+  # def show
+  #   @order = Order.find_by(id: params[:id])
+  #   render 'show.json.jb'
+  # end
 
-  def show
-    @order = Order.find_by(id: params[:id])
-    render 'show.json.jb'
-  end
-
-    # def  show
-    #   id = params[:id]
-    #   @products = Product.find_by(id: id)
-    #   if current_user
-    #     render 'show.json.jb'
-    #   else
-    #     render json: {message: 'acess denied'}
-    #   end
-    # end
+    def  show
+      id = params[:id]
+      @products = Product.find_by(id: id)
+      if current_user
+        render 'show.json.jb'
+      else
+        render json: {message: 'acess denied'}
+      end
+    end
 
 
   def create

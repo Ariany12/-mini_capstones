@@ -4,5 +4,14 @@
   <p> Price: <input type="text" name="price"></p>
   <p> Description: <input type="text" name="description"></p>
 
+
+<label for="user">Choose a user:</label>
+
+<select id= "users" name="user_id">
+<% @users.each do |user| %>
+  <option value="<%= user.id %>"><%= user.name %></option
+<% end %>
+</select>
+
 <input type="submit" value="Make a new recipe">
-  
+  </form>

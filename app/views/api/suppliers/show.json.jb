@@ -1,0 +1,7 @@
+{
+  id: @suppliers.id,
+  name: @suppliers.name,
+  email: @suppliers.email,
+  phone_number: @suppliers.phone_number
+
+}

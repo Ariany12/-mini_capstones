@@ -1,0 +1,7 @@
+
+<form action="/products/<%= @products.id %>" method="post">
+<input type="hidden" name="_method" value="patch">
+<p> Name: <input type="text" name="name" value="<%= @products.name"></p>
+<p> Price: <input type="text" name="price" value="<%= @products.price"></p>
+<p> Subscription : <input type="text" name="subscription" value="<%= @products.subscription"></p>
+<p> Name: <input type="text" name="user_id" value="<%= @products.user_id"></p>

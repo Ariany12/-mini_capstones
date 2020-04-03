@@ -23,8 +23,9 @@ class Api::ProductsController < ApplicationController
 
 
 
-    category = Category.find_by(name: params[:search])
-    @products = category.products
+    #category = Category.find_by(name: params[:search])
+    #@products = category.products
+    @products = Product.all
     render 'index.json.jb'
   end
   
@@ -39,7 +40,8 @@ class Api::ProductsController < ApplicationController
         name: params[:name],
         price: params[:price],
         #image_url: params[:image],
-        description: params[:description]
+        description: params[:description],
+        supplier_id: params[:supplier_id]
     )
        @products.save
 
